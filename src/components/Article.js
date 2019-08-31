@@ -16,6 +16,14 @@ export default class Article extends Component {
                 console.log(response.data.entries)
                 this.setState({ article: response.data.entries[0] });
             })
+
+        // const cockpitToken = '4286cd429116a7e0239f9fad00eaac';
+        // axios.post(`http://localhost:8080/api/collections/get/articles?token=${cockpitToken}&filter[_id]=${this.$route.params.id}`)
+        //   .then((response) => {
+        //     this.setState({ article: response.data.entries[0] });
+        //   })
+        
+
             .catch((error) => {
                 console.log(error)
             });

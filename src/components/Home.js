@@ -40,7 +40,7 @@ const Home = () => {
                     {article.map((article) => (
                         <tr key={article._id}>
                             <td>{article._id}</td>
-                            <td><Link to={`/${article._id}`}>{article.title}</Link></td>
+                            <td><Link to={`/article/${article._id}`}>{article.title}</Link></td>
                             {/* <td><Link to={'/article/' + article._id}>{article.title}</Link></td> */}
                             <td>{article.author[0].display}</td>
                             <td>{article.published_on}</td>
