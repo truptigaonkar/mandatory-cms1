@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import axios from 'axios'
 
-const API_URL_author = "http://192.168.99.102:8080/api/collections/get/authors"
+const API_URL_AUTHOR = "http://192.168.99.102:8080/api/collections/get/authors"
 
 const Author = () => {
     const [author, udpateAuthor] = useState([]);
 
     //  componentDidMount() without hook
     useEffect(() => {
-        axios.get(API_URL_author,
+        axios.get(API_URL_AUTHOR,
             // {headers: { 'Cockpit-Token': '4286cd429116a7e0239f9fad00eaac' }}
         )
             .then(response => {

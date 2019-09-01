@@ -11,19 +11,14 @@ export default class Article extends Component {
     componentDidMount() {
         const { id } = this.props.match.params;
 
-        axios.get(`http://192.168.99.102:8080/api/collections/get/articles/${id}`)
+        //const cockpitToken = '4286cd429116a7e0239f9fad00eaac';
+        //axios.get(`http://192.168.99.102:8080/api/collections/get/articles/Case?token=${cockpitToken}&filter[_id]=${id}`)
+        
+        axios.get(`http://192.168.99.102:8080/api/collections/get/articles/Case?&filter[_id]=${id}`)
             .then((response) => {
-                console.log(response.data.entries)
+                console.log(response.data.entries[0])
                 this.setState({ article: response.data.entries[0] });
             })
-
-        // const cockpitToken = '4286cd429116a7e0239f9fad00eaac';
-        // axios.post(`http://localhost:8080/api/collections/get/articles?token=${cockpitToken}&filter[_id]=${this.$route.params.id}`)
-        //   .then((response) => {
-        //     this.setState({ article: response.data.entries[0] });
-        //   })
-        
-
             .catch((error) => {
                 console.log(error)
             });
