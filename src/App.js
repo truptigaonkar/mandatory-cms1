@@ -9,16 +9,19 @@ function App() {
   return (
     <>
       <Router>
-      <nav>
-            <ul>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/Author">Authors</Link></li>
-            </ul>
-          </nav>
-        <Route exact path="/" component={Home} />
-        <Route path="/article/:id" component={Article} />
-        <Route path="/Author" component={Author}/>
+      <nav class="navbar navbar-expand-sm bg-dark justify-content-center">
+          <ul class="navbar-nav">
+            <li class="nav-item"><Link to="/"><a class="nav-link">Posts</a></Link></li>
+            <li class="nav-item .font-weight-bold"><Link to="/Author"><a class="nav-link">Authors</a></Link></li>
+          </ul>
+        </nav><br />
+        <div className="container">
+          <Route exact path="/" component={Home} />
+          <Route path="/article/:id" component={Article} />
+          <Route path="/Author" component={Author} />
+        </div>
       </Router>
+
     </>
   );
 }

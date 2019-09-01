@@ -26,14 +26,29 @@ const Author = () => {
             <Helmet>
                 <title>Author</title>
             </Helmet>
-            {author.map((author) => (
-                <>
-                    <p>{<img src={"http://192.168.99.102:8080/" + author.avatar.path} alt="image" width="100px" />}</p>
-                    <b>{author.name}</b>
-                    <p>{author.description}</p>
-                    <hr />
-                </>
-            ))}
+            {/* <ol class="breadcrumb">
+                <li><a href="/">Home</a></li><br />
+                <li class="active">Authors</li>
+            </ol> */}
+            <table class="table table-hover">
+                <caption>List of Authors</caption>
+                <thead class="thead-light">
+                    <tr>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {author.map((author) => (
+                        <tr key={author._id}>
+                            <td>{<img src={"http://192.168.99.102:8080/" + author.avatar.path} alt="image" width="50px" />}</td>
+                            <td>{author.name}</td>
+                            <td>{author.description}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
         </>
     );
 };

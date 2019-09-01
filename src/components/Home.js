@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import axios from 'axios'
 import { Link } from 'react-router-dom';
@@ -10,13 +10,13 @@ const Home = () => {
 
     //  componentDidMount() without hook
     useEffect(() => {
-        axios.get(API_URL_ARTICLE, 
+        axios.get(API_URL_ARTICLE,
             // {headers: { 'Cockpit-Token': '4286cd429116a7e0239f9fad00eaac' }}
-            )
-        .then(response => {
-            console.log(response.data.entries);
-            updateArticle(response.data.entries);
-        });
+        )
+            .then(response => {
+                console.log(response.data.entries);
+                updateArticle(response.data.entries);
+            });
     }, []);
 
     if (!article) {
@@ -26,28 +26,21 @@ const Home = () => {
         <>
             <Helmet>
                 <title>Home</title>
-            </Helmet> 
-            <table border="1">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Title</th>
-                        <th>Author</th>
-                        <th>Date</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {article.map((article) => (
-                        <tr key={article._id}>
-                            <td>{article._id}</td>
-                            <td><Link to={`/article/${article._id}`}>{article.title}</Link></td>
-                            {/* <td><Link to={'/article/' + article._id}>{article.title}</Link></td> */}
-                            <td>{article.author[0].display}</td>
-                            <td>{article.published_on}</td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
+            </Helmet>
+            <div class="row justify-content-center">
+                {article.map((article) => (
+                    <div class="col-md-9 card mb-1">
+                        <div class="card-body" style={{ padding: "5px" }}>
+                            <p key={article._id}>
+                                <h6><Link to={`/article/${article._id}`}>{article.title}</Link></h6>
+                                <p class="card-text" style={{ fontSize: "12px" }}>{article.body} <Link to={`/article/${article._id}`}>Read more &rarr;</Link></p>
+                                <div class=" text-muted" style={{ fontSize: "12px", float: "right" }}>Published by: <b>{article.author[0].display}</b> on
+                                <b> {article.published_on}</b></div>
+                            </p>
+                        </div>
+                    </div>
+                ))}
+            </div>
         </>
     );
 };
