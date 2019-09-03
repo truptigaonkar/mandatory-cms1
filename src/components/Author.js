@@ -27,29 +27,27 @@ const Author = () => {
             <Helmet>
                 <title>Author</title>
             </Helmet>
-            {/* <ol class="breadcrumb">
-                <li><a href="/">Home</a></li><br />
-                <li class="active">Authors</li>
-            </ol> */}
-            <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><Link to="/">Home </Link></li>
-                        <li class="breadcrumb-item active">All Authors</li>
-                    </ol>
-                </nav>
+            {/* <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><Link to="/">Home </Link></li>
+                    <li class="breadcrumb-item active">All Authors</li>
+                </ol>
+            </nav> */}
             <table class="table table-hover">
                 <caption>List of Authors</caption>
-                <thead class="thead-light">
+                <thead class="thead-dark">
                     <tr>
+                        <th>#</th>
                         <th>Image</th>
                         <th>Name</th>
                         <th>Description</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {author.map((author) => (
+                    {author.map((author, index) => (
                         <tr key={author._id}>
-                            <td>{<img src={"http://192.168.99.102:8080/" + author.avatar.path} alt="image" width="50px" />}</td>
+                            <td scope="row">{index + 1}</td>
+                            <td>{<img src={"http://192.168.99.102:8080/" + author.avatar.path} alt="image" width="40px" />}</td>
                             <td>{author.name}</td>
                             <td>{author.description}</td>
                         </tr>

@@ -9,19 +9,30 @@ function App() {
   return (
     <>
       <Router>
-      <nav class="navbar navbar-expand-sm bg-dark justify-content-center">
-          <ul class="navbar-nav">
-            <li class="nav-item"><Link to="/"><a class="nav-link">Posts</a></Link></li>
-            <li class="nav-item .font-weight-bold"><Link to="/Author"><a class="nav-link">Authors</a></Link></li>
-          </ul>
-        </nav><br />
+        <header class="masthead">
+          <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <Link to="/"><a className="nav-link"><b>Home</b></a></Link>
+                </li>
+                <li class="nav-item">
+                  <Link to="/Author"><a className="nav-link"><b>Authors</b></a></Link>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <div className="site-heading" style={{color:'#FF0000'}}>
+          <h2>Welcome to my blog</h2>
+            
+</div>
+        </header><br />
         <div className="container">
           <Route exact path="/" component={Home} />
           <Route path="/article/:id" component={Article} />
           <Route path="/Author" component={Author} />
         </div>
       </Router>
-
     </>
   );
 }

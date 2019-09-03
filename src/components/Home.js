@@ -11,7 +11,7 @@ const Home = () => {
     const [article, updateArticle] = useState([]);
     //Pagination
     const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage, setPostsPerPage] = useState(3);
+    const [postsPerPage, setPostsPerPage] = useState(5);
 
     //componentDidMount() without hook
     useEffect(() => {
@@ -42,24 +42,24 @@ const Home = () => {
             </Helmet>
             <div class="row justify-content-center">
                 {currentPosts.map((article) => (
-                    <div class="col-md-9 card mb-1">
+                    <div class="col-md-12 card mb-1" style={{ backgroundColor: "#f9fbfd" }}>
                         <div class="card-body" style={{ padding: "5px" }}>
                             <p key={article._id}>
-                                <h6><Link to={`/article/${article._id}`}>{article.title}</Link></h6>
+                                <h6><Link to={`/article/${article._id}`}>{article.title}</Link><div class=" text-muted" style={{ fontSize: "12px", float: "right" }}>{article.published_on}</div></h6>
                                 <p class="card-text" style={{ fontSize: "12px" }}>
-                                    <ReactMarkdown source={article.body.substring(0, 50)} /><Link to={`/article/${article._id}`}>Read more &rarr;</Link>
+                                    <div className="two"><ReactMarkdown source={article.body.substring(0, 75).concat(' ', ". . . .")} /><Link to={`/article/${article._id}`}> - Read more &rarr;</Link></div>
                                     <div class=" text-muted" style={{ fontSize: "12px", float: "right" }}>
-                                        Published by: <b>{ (article.author || []).map(authorName => <Link to={"/author/" + article._id}>{ authorName.display }</Link>)}</b> on <b>{article.published_on}</b></div></p>
+                                        Published by: {(article.author || []).map(authorName => <Link to={"/author/" + article._id}> {authorName.display}</Link>)}</div></p>
                             </p>
                         </div>
                     </div>
                 ))}
+                <Pagination
+                    postsPerPage={postsPerPage}
+                    totalPosts={article.length}
+                    paginate={paginate}
+                />
             </div>
-            <Pagination
-                postsPerPage={postsPerPage}
-                totalPosts={article.length}
-                paginate={paginate}
-            />
         </>
     );
 };
