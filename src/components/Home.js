@@ -48,8 +48,8 @@ const Home = () => {
                                 <h6><Link to={`/article/${article._id}`}>{article.title}</Link></h6>
                                 <p class="card-text" style={{ fontSize: "12px" }}>
                                     <ReactMarkdown source={article.body.substring(0, 50)} /><Link to={`/article/${article._id}`}>Read more &rarr;</Link>
-                                    <div class=" text-muted" style={{ fontSize: "12px", float: "right" }}>Published by: <b>{article.author[0].display}</b> on
-                                <b> {article.published_on}</b></div></p>
+                                    <div class=" text-muted" style={{ fontSize: "12px", float: "right" }}>
+                                        Published by: <b>{ (article.author || []).map(authorName => <Link to={"/author/" + article._id}>{ authorName.display }</Link>)}</b> on <b>{article.published_on}</b></div></p>
                             </p>
                         </div>
                     </div>
