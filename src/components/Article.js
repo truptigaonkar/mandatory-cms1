@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Helmet } from 'react-helmet';
 import axios from 'axios'
-import { BrowserRouter as Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export default class Article extends Component {
     constructor(props) {
@@ -37,10 +37,12 @@ export default class Article extends Component {
                 <Helmet>
                     <title>Article {article.title}</title>
                 </Helmet>
-                {/* <ol class="breadcrumb">
-                    <li><a href="/">Home</a></li><br />
-                    <li class="active">Article</li>
-                </ol> */}
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><Link to="/">Home </Link></li>
+                        <li class="breadcrumb-item active">{article.title}</li>
+                    </ol>
+                </nav>
                 <div class="row justify-content-center">
                     <div class="col-md-9 card mb-4  mt-3 left  top">
                         <div class="card-body" style={{ padding: "25px" }}>

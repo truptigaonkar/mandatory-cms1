@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import axios from 'axios'
+import { Link } from "react-router-dom";
 
 const API_URL_AUTHOR = "http://192.168.99.102:8080/api/collections/get/authors"
 
@@ -30,6 +31,12 @@ const Author = () => {
                 <li><a href="/">Home</a></li><br />
                 <li class="active">Authors</li>
             </ol> */}
+            <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><Link to="/">Home </Link></li>
+                        <li class="breadcrumb-item active">All Authors</li>
+                    </ol>
+                </nav>
             <table class="table table-hover">
                 <caption>List of Authors</caption>
                 <thead class="thead-light">
