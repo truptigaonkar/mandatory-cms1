@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/mandatory-cms1/static/css/main.34e5b10a.chunk.css",
-    "main.js": "/mandatory-cms1/static/js/main.712556e2.chunk.js",
-    "main.js.map": "/mandatory-cms1/static/js/main.712556e2.chunk.js.map",
+    "main.js": "/mandatory-cms1/static/js/main.1264b172.chunk.js",
+    "main.js.map": "/mandatory-cms1/static/js/main.1264b172.chunk.js.map",
     "runtime~main.js": "/mandatory-cms1/static/js/runtime~main.aea1d000.js",
     "runtime~main.js.map": "/mandatory-cms1/static/js/runtime~main.aea1d000.js.map",
     "static/js/2.4d65c1ad.chunk.js": "/mandatory-cms1/static/js/2.4d65c1ad.chunk.js",
     "static/js/2.4d65c1ad.chunk.js.map": "/mandatory-cms1/static/js/2.4d65c1ad.chunk.js.map",
     "index.html": "/mandatory-cms1/index.html",
-    "precache-manifest.0b0b31ed78e511259e3c5f6f6872a7cd.js": "/mandatory-cms1/precache-manifest.0b0b31ed78e511259e3c5f6f6872a7cd.js",
+    "precache-manifest.fef5305c955bba5875acd3e6ea1a6f41.js": "/mandatory-cms1/precache-manifest.fef5305c955bba5875acd3e6ea1a6f41.js",
     "service-worker.js": "/mandatory-cms1/service-worker.js",
     "static/css/main.34e5b10a.chunk.css.map": "/mandatory-cms1/static/css/main.34e5b10a.chunk.css.map",
     "static/media/index.css": "/mandatory-cms1/static/media/home.56f77c35.jpg"
