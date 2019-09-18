@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import Pagination from '../components/Pagination';
 
-const API_URL_ARTICLE = "http://192.168.99.102:8080/api/collections/get/articles";
+const API_URL_ARTICLE = "https://mandatory-cms2-bdb280.devspace.host/api/collections/get/articles";
 
 const Home = () => {
     const [article, updateArticle] = useState([]);
     //Pagination
     const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage, setPostsPerPage] = useState(5);
+    const [postsPerPage, setPostsPerPage] = useState(4);
 
     //componentDidMount() without hook
     useEffect(() => {
