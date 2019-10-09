@@ -1,4 +1,4 @@
-## Blog SPA application Cockpit and REACT 
+## Blog SPA application Cockpit and REACT - [Live Demo]( https://truptigaonkar.github.io/mandatory-cms1/)
 ### Instructions
 
 Create a simple SPA blog application using a headless CMS called Cockpit. 
