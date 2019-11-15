@@ -3,14 +3,14 @@ import { Helmet } from 'react-helmet';
 import axios from 'axios'
 import { Link } from "react-router-dom";
 
-const API_URL_AUTHOR = "https://mandatory-cms2-bdb280.devspace.host/api/collections/get/authors"
+const API_URL = `${process.env.REACT_APP_API_URL}`;
 
 const Author = () => {
     const [author, udpateAuthor] = useState([]);
 
     //  componentDidMount() without hook
     useEffect(() => {
-        axios.get(API_URL_AUTHOR,
+        axios.get(`${API_URL}/api/collections/get/authors`,
             // {headers: { 'Cockpit-Token': '4286cd429116a7e0239f9fad00eaac' }}
         )
             .then(response => {
@@ -47,7 +47,7 @@ const Author = () => {
                     {author.map((author, index) => (
                         <tr key={author._id}>
                             <td scope="row">{index + 1}</td>
-                            <td>{<img src={"https://mandatory-cms2-bdb280.devspace.host/" + author.avatar.path} alt="image" width="40px" />}</td>
+                            <td>{<img src={API_URL + "/" + author.avatar.path} alt="image" width="40px" />}</td>
                             <td>{author.name}</td>
                             <td>{author.description}</td>
                         </tr>

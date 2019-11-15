@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import Pagination from '../components/Pagination';
 
-const API_URL_ARTICLE = "https://mandatory-cms2-bdb280.devspace.host/api/collections/get/articles";
+const API_URL = `${process.env.REACT_APP_API_URL}`;
 
 const Home = () => {
     const [article, updateArticle] = useState([]);
@@ -15,7 +15,7 @@ const Home = () => {
 
     //componentDidMount() without hook
     useEffect(() => {
-        axios.get(API_URL_ARTICLE,
+        axios.get(`${API_URL}/api/collections/get/articles`,
             // {headers: { 'Cockpit-Token': '4286cd429116a7e0239f9fad00eaac' }}
         )
             .then(response => {
